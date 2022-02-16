@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <script>
+    
+    
+  </script>
+</head>
+
+<body>
+
+<input id="textNumber" disabled="">
+<button onclick="input1('4')">4</button>
+<button onclick="input1('5')">5</button>
+
+
+<button onclick="operate('add')"> + </button>
+<h2></h2>
+
+<button>
+  
+</button>
+
+
+<script>
+
+  function input1(x)
+  {
+    document.getElementById("textNumber").value += x;
+  }
+  
+  function operate(type)
+  {
+    var x = document.getElementById("textNumber").value;
+    console.log(x);
+    
+    var num1 = localStorage.getItem("num1");
+    
+    console.log(num1);
+    if (num1 != null)
+    {
+      localStorage.setItem("num2", x);
+    }
+    else
+    {
+      localStorage.setItem("num1", x);
+    }
+    
+    localStorage.setItem("operate", type)
+  
+    document.getElementById("textNumber").value=""
+  }
+  
+  var x = 7;
+  y=5;
+  
+  function abc()
+  {
+    
+  }
+  
+  console.log();
+</script>
+</body>
+
+</html>

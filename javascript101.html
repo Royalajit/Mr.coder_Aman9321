@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script>
+    console.log("I am learning Javascript")
+  </script>
+   <div>
+     <a href="contact.html">CONTACT</a>
+     <br><br>
+     <a href="index.html">Back to home</a>
+     <br><br>
+     <a href="1index.html">CALCULATOR</a>
+   </div>
+   <br><br>
+</head>
+
+<body>
+  <p><span id="salutation"></span>  Bro /Sis <span id="message"></span></p>
+
+  <br><br>
+  <button onclick="document.getElementById('message').innerHTML=' How are you? <br> thanks for visting.'">Update text!</button>
+
+
+
+
+  <h3 id="display"></h3>
+
+  <input type="text" id="text" oninput="updateText()">
+
+
+
+
+
+  <br><br>
+  <button onclick="document.getElementById('image1').style.display='block'">Show image</button>
+
+  <button onclick="document.getElementById('image1').style.display='none'">Hide image</button>
+
+  <img src="https://nationalparks-15bc7.kxcdn.com/images/parks/aoraki-mount-cook/20210206232653-Aroki%20Mount%20Cook%20National%20Park.jpg?width=320&height=240" id="image1">
+
+
+
+
+
+  <br><br>
+  <h3 id="colordisplay"></h3>
+  <input type="text" id="colortext" oninput="updateTextColor()">
+
+
+
+
+  <script>
+    document.getElementById("salutation").innerHTML = "Hi"
+
+
+
+    function updateText()
+    {
+      document.getElementById("display").innerHTML = document.getElementById("text").value;
+    }
+
+    function updateTextColor()
+    {
+      var txt = document.getElementById("colortext").value;
+
+      var newText = "";
+      for (var i = 0, l = txt.length; i < l; i++)
+      {
+        newText += '<span style="color:#' + getColor() + '">' + txt.charAt(i) + '</span>';
+      }
+      document.getElementById("colordisplay").innerHTML = newText;
+
+    }
+
+    function getColor()
+    {
+      var colorString = "";
+      for (var i = 0; i < 6; i++)
+      {
+        var num = Math.floor(Math.random() * 17);
+        hexNum = num.toString(16);
+        colorString += hexNum;
+      }
+      return colorString;
+    }
+  </script>
+</body>
+
+</html>
